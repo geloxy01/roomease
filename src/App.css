@@ -1,8 +1,3 @@
-/* =========================================
-   ROOMEASE — REACT STYLESHEET
-   Palette: #FCFAEE · #FF6801 · #DBD0BE · #0C5446
-========================================= */
-
 :root {
   --cream: #fcfaee;
   --orange: #ff6801;
@@ -50,12 +45,10 @@ textarea {
   font-family: inherit;
 }
 
-/* ── APP ROOT ── */
 .app-root {
   min-height: 100vh;
 }
 
-/* ── SHELL (authenticated) ── */
 .shell {
   display: flex;
   min-height: 100vh;
@@ -143,7 +136,6 @@ textarea {
   min-height: 100vh;
 }
 
-/* ── TOP HEADER ── */
 .top-header {
   display: flex;
   justify-content: space-between;
@@ -196,7 +188,6 @@ textarea {
   color: var(--muted);
 }
 
-/* ── SECTION HEADER ── */
 .section-header {
   margin-bottom: 16px;
 }
@@ -211,7 +202,6 @@ textarea {
   font-size: 13px;
 }
 
-/* ── ACTION CARDS ── */
 .action-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -276,7 +266,6 @@ textarea {
   line-height: 1.5;
 }
 
-/* ── TABLE ── */
 .table-card {
   background: var(--white);
   border-radius: var(--radius);
@@ -322,7 +311,6 @@ table tbody tr:hover {
   color: var(--muted);
 }
 
-/* ── BADGES ── */
 .badge {
   display: inline-block;
   padding: 3px 10px;
@@ -373,7 +361,6 @@ table tbody tr:hover {
   vertical-align: middle;
 }
 
-/* ── BUTTONS ── */
 .btn-primary {
   display: inline-block;
   background: var(--orange);
@@ -495,7 +482,6 @@ table tbody tr:hover {
   background: #083d33;
 }
 
-/* ── PANEL / FORM ── */
 .panel {
   background: var(--white);
   padding: 28px;
@@ -574,7 +560,6 @@ table tbody tr:hover {
   gap: 18px;
 }
 
-/* ── ALERTS ── */
 .alert-success,
 .alert-error {
   padding: 13px 16px;
@@ -594,7 +579,6 @@ table tbody tr:hover {
   border-left: 3px solid #c0392b;
 }
 
-/* ── SEARCH CARD (Availability) ── */
 .search-card {
   background: var(--white);
   border-radius: var(--radius);
@@ -637,7 +621,6 @@ table tbody tr:hover {
   background: var(--white);
 }
 
-/* ── ROOM GRID ── */
 .room-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
@@ -692,7 +675,6 @@ table tbody tr:hover {
   font-size: 13px;
 }
 
-/* ── PAGE FOOTER ── */
 .page-footer {
   margin-top: 48px;
   padding-top: 18px;
@@ -702,7 +684,6 @@ table tbody tr:hover {
   border-top: var(--border);
 }
 
-/* ── EMPTY STATE ── */
 .empty-state {
   text-align: center;
   padding: 60px;
@@ -717,25 +698,19 @@ table tbody tr:hover {
   margin-bottom: 20px;
 }
 
-/* ── PAGE HEADER ACTIONS ── */
 .page-header-actions {
   margin-bottom: 8px;
 }
 
-/* ── MUTED TEXT ── */
 .muted {
   color: var(--muted);
 }
 
-/* ════════════════════════════════════════
-   PUBLIC / LANDING STYLES
-═══════════════════════════════════════ */
 .landing {
   min-height: 100vh;
   background: var(--cream);
 }
 
-/* ── Public Header ── */
 .pub-header {
   width: 100%;
   background: var(--white);
@@ -799,7 +774,6 @@ table tbody tr:hover {
   transform: translateY(-1px);
 }
 
-/* ── Hero ── */
 .hero {
   display: flex;
   justify-content: space-between;
@@ -879,7 +853,6 @@ table tbody tr:hover {
   text-align: center;
 }
 
-/* ── Features ── */
 .features-section {
   width: 90%;
   max-width: 1300px;
@@ -941,7 +914,6 @@ table tbody tr:hover {
   font-size: 13.5px;
 }
 
-/* ── CTA Banner ── */
 .cta-banner {
   background: var(--green);
   padding: 72px 64px;
@@ -974,7 +946,6 @@ table tbody tr:hover {
   min-width: 190px;
 }
 
-/* ── Public Footer ── */
 .pub-footer {
   margin-top: 0;
   background: var(--green);
@@ -997,7 +968,6 @@ table tbody tr:hover {
   color: var(--orange);
 }
 
-/* ── Auth Pages ── */
 .auth-page {
   min-height: 100vh;
   background: var(--cream);
@@ -1040,7 +1010,6 @@ table tbody tr:hover {
   font-size: 14px;
 }
 
-/* ── About / General Sections ── */
 .page-section {
   width: 90%;
   max-width: 1300px;
@@ -1117,7 +1086,6 @@ table tbody tr:hover {
   font-weight: 700;
 }
 
-/* ── Profile ── */
 .profile-banner {
   background: var(--green);
   border-radius: var(--radius);
@@ -1288,7 +1256,6 @@ table tbody tr:hover {
   color: var(--orange);
 }
 
-/* ─── RESPONSIVE ─────────────────────────────── */
 @media (max-width: 1200px) {
   .action-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1396,7 +1363,6 @@ table tbody tr:hover {
   }
 }
 
-/* ─── SCROLLBAR ─────── */
 ::-webkit-scrollbar {
   width: 7px;
 }
@@ -1411,7 +1377,6 @@ table tbody tr:hover {
   background: var(--green);
 }
 
-/* ── Spinner ── */
 .spinner-wrap {
   display: flex;
   align-items: center;
@@ -1422,7 +1387,6 @@ table tbody tr:hover {
   font-size: 14px;
 }
 
-/* ── Stat Row (4 cols for admin) ── */
 .stat-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1458,8 +1422,6 @@ table tbody tr:hover {
   letter-spacing: 0.5px;
 }
 
-/* ── Student accent color ── */
-/* ── Student accent color ── */
 :root {
   --blue: #0e7490;
   --blue-light: #ecfeff;
@@ -1470,7 +1432,6 @@ table tbody tr:hover {
   color: #0e7490;
 }
 
-/* ── Sidebar role badge ── */
 .sidebar-role-badge {
   display: inline-block;
   margin: 0 10px 20px;
@@ -1488,7 +1449,6 @@ table tbody tr:hover {
   color: #fdba74;
 }
 
-/* ── Student notice banner ── */
 .student-notice {
   background: var(--blue-light);
   border: 1.5px solid #bfdbfe;
@@ -1500,7 +1460,6 @@ table tbody tr:hover {
   line-height: 1.6;
 }
 
-/* ── Student buttons ── */
 .btn-primary-student {
   display: inline-block;
   background: var(--blue);
@@ -1526,7 +1485,6 @@ table tbody tr:hover {
   background: #2563eb;
 }
 
-/* ── Auth role tag ── */
 .auth-role-tag {
   display: inline-block;
   padding: 5px 14px;
@@ -1544,7 +1502,6 @@ table tbody tr:hover {
   color: #1d4ed8;
 }
 
-/* ── Register buttons on landing ── */
 .pub-register-group {
   display: flex;
   gap: 8px;
@@ -1566,7 +1523,6 @@ table tbody tr:hover {
   color: #fff;
 }
 
-/* ── Profile banner student ── */
 .profile-banner--student {
   background: #1d4ed8;
 }
@@ -1577,7 +1533,6 @@ table tbody tr:hover {
   background: var(--blue);
 }
 
-/* ── Filter bar (All Schedules) ── */
 .filter-bar {
   display: flex;
   gap: 12px;
@@ -1615,7 +1570,6 @@ table tbody tr:hover {
   cursor: pointer;
 }
 
-/* ── Filter tabs (Manage Users) ── */
 .filter-tab {
   padding: 8px 18px;
   border-radius: 50px;
@@ -1637,7 +1591,6 @@ table tbody tr:hover {
   color: var(--green);
 }
 
-/* ── Role cards (About) ── */
 .role-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

@@ -5,7 +5,7 @@ $body   = getBody();
 $action = $body['action'] ?? '';
 $db     = getDB();
 
-// ── LOGIN ───────────────────────────────────────────────
+
 if ($action === 'login') {
     $username = trim($body['username'] ?? '');
     $password = $body['password'] ?? '';
@@ -31,7 +31,7 @@ if ($action === 'login') {
     respond(['user' => $user]);
 }
 
-// ── REGISTER TEACHER ────────────────────────────────────
+
 if ($action === 'register_teacher') {
     $fullname   = trim($body['fullname'] ?? '');
     $username   = trim($body['username'] ?? '');
@@ -61,7 +61,7 @@ if ($action === 'register_teacher') {
     }
 }
 
-// ── REGISTER STUDENT ────────────────────────────────────
+
 if ($action === 'register_student') {
     $fullname   = trim($body['fullname'] ?? '');
     $username   = trim($body['username'] ?? '');

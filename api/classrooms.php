@@ -4,7 +4,7 @@ require_once 'config.php';
 $db     = getDB();
 $method = $_SERVER['REQUEST_METHOD'];
 
-// ── GET all classrooms ──────────────────────────────────
+
 if ($method === 'GET') {
     $result = $db->query("SELECT * FROM classrooms ORDER BY room_name ASC");
     $rooms  = $result->fetch_all(MYSQLI_ASSOC);
@@ -13,7 +13,7 @@ if ($method === 'GET') {
 
 $body = getBody();
 
-// ── POST: add classroom ─────────────────────────────────
+
 if ($method === 'POST') {
     $room_name = trim($body['room_name'] ?? '');
     if (!$room_name) respond(['error' => 'Room name is required.'], 400);
@@ -31,7 +31,7 @@ if ($method === 'POST') {
     respond(['id' => $db->insert_id, 'room_name' => $room_name]);
 }
 
-// ── PUT: edit classroom ─────────────────────────────────
+
 if ($method === 'PUT') {
     $id        = intval($body['id'] ?? 0);
     $room_name = trim($body['room_name'] ?? '');
@@ -43,7 +43,7 @@ if ($method === 'PUT') {
     respond(['message' => 'Classroom updated.']);
 }
 
-// ── DELETE: remove classroom ────────────────────────────
+
 if ($method === 'DELETE') {
     $id = intval($body['id'] ?? 0);
     if (!$id) respond(['error' => 'Invalid ID.'], 400);

@@ -4,7 +4,6 @@ require_once 'config.php';
 $db     = getDB();
 $method = $_SERVER['REQUEST_METHOD'];
 
-// ── GET all users (without password) ───────────────────
 if ($method === 'GET') {
     $result = $db->query("SELECT id, fullname, username, role, teacher_id, department, created_at FROM users ORDER BY fullname ASC");
     $users  = $result->fetch_all(MYSQLI_ASSOC);
@@ -13,7 +12,6 @@ if ($method === 'GET') {
 
 $body = getBody();
 
-// ── PUT: change password ────────────────────────────────
 if ($method === 'PUT') {
     $id          = intval($body['id'] ?? 0);
     $current     = $body['current_password'] ?? '';
@@ -39,12 +37,10 @@ if ($method === 'PUT') {
     respond(['message' => 'Password changed successfully.']);
 }
 
-// ── DELETE: remove user ─────────────────────────────────
 if ($method === 'DELETE') {
     $id = intval($body['id'] ?? 0);
     if (!$id) respond(['error' => 'Invalid ID.'], 400);
 
-    // Prevent deleting the only admin
     $check = $db->query("SELECT COUNT(*) AS cnt FROM users WHERE role = 'admin'");
     $count = $check->fetch_assoc()['cnt'];
 

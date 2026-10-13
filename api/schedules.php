@@ -4,7 +4,7 @@ require_once 'config.php';
 $db     = getDB();
 $method = $_SERVER['REQUEST_METHOD'];
 
-// ── GET all schedules (with teacher name + room name) ───
+
 if ($method === 'GET') {
     $sql = "SELECT s.*, u.fullname AS teacher_name, c.room_name
             FROM schedules s
@@ -18,7 +18,6 @@ if ($method === 'GET') {
 
 $body = getBody();
 
-// ── POST: add schedule (with conflict check) ────────────
 if ($method === 'POST') {
     $classroom_id  = intval($body['classroom_id'] ?? 0);
     $teacher_id    = intval($body['teacher_id'] ?? 0);
@@ -36,7 +35,6 @@ if ($method === 'POST') {
         respond(['error' => 'End time must be after start time.'], 400);
     }
 
-    // Conflict check
     $stmt = $db->prepare("
         SELECT id FROM schedules
         WHERE classroom_id = ?
@@ -55,7 +53,6 @@ if ($method === 'POST') {
     $stmt->bind_param("iisssss", $classroom_id, $teacher_id, $subject, $schedule_date, $day, $start_time, $end_time);
 
     if ($stmt->execute()) {
-        // Return the full schedule row with names
         $id   = $db->insert_id;
         $row  = $db->query("SELECT s.*, u.fullname AS teacher_name, c.room_name FROM schedules s JOIN users u ON s.teacher_id = u.id JOIN classrooms c ON s.classroom_id = c.id WHERE s.id = $id")->fetch_assoc();
         respond($row);
@@ -64,7 +61,6 @@ if ($method === 'POST') {
     }
 }
 
-// ── DELETE: remove schedule ─────────────────────────────
 if ($method === 'DELETE') {
     $id = intval($body['id'] ?? 0);
     if (!$id) respond(['error' => 'Invalid ID.'], 400);
