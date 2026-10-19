@@ -1,0 +1,7 @@
+node_modules
+dist
+.git
+.env
+*.log
+api/reset_admin.php
+api/roomease.sql

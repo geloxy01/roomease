@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS users (
   fullname VARCHAR(100) NOT NULL,
   username VARCHAR(50) NOT NULL UNIQUE,
   password VARCHAR(255) NOT NULL,
-  role ENUM('admin','teacher') NOT NULL DEFAULT 'teacher',
+    role ENUM('admin','teacher','student') NOT NULL DEFAULT 'teacher',
   teacher_id VARCHAR(50),
   department VARCHAR(100),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -42,6 +42,6 @@ CREATE TABLE IF NOT EXISTS schedules (
 
 -- Default admin account (password: admin123)
 INSERT INTO users (fullname, username, password, role, teacher_id, department)
-VALUES ('Administrator', 'admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin', 'ADM-001', 'Administration');
+VALUES ('Administrator', 'admin', '$2y$10$zSnq4wqUhBdE0rNhK/NoVOSIrQ2pvJI9zO6BQ7KK.HLQ3KQdKUPVa', 'admin', 'ADM-001', 'Administration');
 -- Note: the hashed password above = 'admin123' using bcrypt
 -- To change it, update the hash using: password_hash('yourpassword', PASSWORD_BCRYPT)

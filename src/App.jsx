@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import "./App.css";
 
-const API = "http://localhost/RoomEase/api";
+const API = import.meta.env.VITE_API_URL ?? "http://localhost/RoomEase/api";
 
 async function api(endpoint, method = "GET", body = null) {
   const opts = { method, headers: { "Content-Type": "application/json" } };
