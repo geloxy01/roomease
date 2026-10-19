@@ -1,14 +1,20 @@
 :root {
-  --cream: #fcfaee;
-  --orange: #ff6801;
-  --sand: #dbd0be;
-  --green: #0c5446;
-  --ink: #111111;
-  --muted: #5a5a4a;
+  /* Rosemont Hills Montessori College crest palette */
+  --primary: #1e4aa8; /* shield royal blue */
+  --primary-dark: #14337a;
+  --sky: #58b8e8; /* light-blue quarter of the shield */
+  --accent: #b01c1c; /* crimson stripes */
+  --accent-dark: #8f1414;
+  --gold: #e6c65c; /* banner gold */
+  --leaf: #2e7d4f; /* laurel wreath / globe green */
+  --bg: #fbf8e8; /* banner cream */
+  --line: #e0d6a8;
+  --ink: #14193a;
+  --muted: #565a73;
   --white: #ffffff;
   --radius: 14px;
-  --shadow: 0 4px 24px rgba(12, 84, 70, 0.09);
-  --border: 1.5px solid #dbd0be;
+  --shadow: 0 4px 24px rgba(30, 74, 168, 0.1);
+  --border: 1.5px solid #e0d6a8;
 }
 
 *,
@@ -24,7 +30,7 @@ html {
 
 body {
   font-family: "Poppins", "Segoe UI", sans-serif;
-  background: var(--cream);
+  background: var(--bg);
   color: var(--ink);
   min-height: 100vh;
   font-size: 14px;
@@ -56,7 +62,7 @@ textarea {
 
 .sidebar {
   width: 240px;
-  background: var(--green);
+  background: var(--primary);
   padding: 28px 16px;
   position: fixed;
   left: 0;
@@ -68,7 +74,22 @@ textarea {
   overflow-y: auto;
 }
 
+.brand-logo {
+  display: block;
+  height: 44px;
+  width: auto;
+  flex-shrink: 0;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.25));
+}
+.brand-name b {
+  font-weight: inherit;
+  color: var(--accent);
+}
+
 .sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 20px;
   font-weight: 800;
   color: var(--white);
@@ -76,8 +97,11 @@ textarea {
   padding: 0 10px;
   margin-bottom: 32px;
 }
-.sidebar-logo span {
-  color: var(--orange);
+.sidebar-logo .brand-logo {
+  height: 40px;
+}
+.sidebar-logo .brand-name b {
+  color: var(--gold);
 }
 
 .sidebar-section-label {
@@ -85,7 +109,7 @@ textarea {
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: rgba(252, 250, 238, 0.35);
+  color: rgba(251, 248, 232, 0.35);
   padding: 0 10px;
   margin-bottom: 6px;
 }
@@ -108,7 +132,7 @@ textarea {
   align-items: center;
   gap: 11px;
   padding: 10px 10px;
-  color: rgba(252, 250, 238, 0.65);
+  color: rgba(251, 248, 232, 0.65);
   border-radius: 8px;
   font-size: 13.5px;
   font-weight: 500;
@@ -125,7 +149,8 @@ textarea {
   color: var(--white);
 }
 .sidebar-link.active {
-  background: rgba(255, 104, 1, 0.18);
+  background: rgba(230, 198, 92, 0.2);
+  box-shadow: inset 3px 0 0 var(--gold);
   color: var(--white);
 }
 
@@ -168,7 +193,7 @@ textarea {
   width: 38px;
   height: 38px;
   border-radius: 8px;
-  background: var(--green);
+  background: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -231,14 +256,14 @@ textarea {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--orange);
+  background: var(--accent);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.2s;
 }
 
 .action-card:hover {
-  border-color: rgba(255, 104, 1, 0.3);
+  border-color: rgba(30, 74, 168, 0.35);
   box-shadow: var(--shadow);
   transform: translateY(-3px);
 }
@@ -251,7 +276,7 @@ textarea {
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: var(--orange);
+  color: var(--accent);
   margin-bottom: 8px;
 }
 .action-card h3 {
@@ -280,7 +305,7 @@ table {
 }
 
 table thead {
-  background: #f5f3ec;
+  background: #f6f2dc;
 }
 table th {
   padding: 12px 18px;
@@ -294,7 +319,7 @@ table th {
 }
 table td {
   padding: 13px 18px;
-  border-bottom: 1px solid #f0ede4;
+  border-bottom: 1px solid #efe9cc;
   font-size: 14px;
   color: var(--ink);
 }
@@ -302,7 +327,7 @@ table tbody tr:last-child td {
   border-bottom: none;
 }
 table tbody tr:hover {
-  background: #faf8f0;
+  background: #fbf8e8;
 }
 
 .empty-cell {
@@ -329,12 +354,12 @@ table tbody tr:hover {
   color: #9b1c1c;
 }
 .badge-sand {
-  background: var(--sand);
+  background: var(--line);
   color: var(--muted);
 }
 .badge-orange {
-  background: #fff0e5;
-  color: #b84700;
+  background: #fdf3cf;
+  color: #8a6a00;
 }
 
 .day-badge {
@@ -343,13 +368,13 @@ table tbody tr:hover {
   border-radius: 4px;
   font-size: 12px;
   font-weight: 700;
-  background: #eceae0;
-  color: var(--green);
+  background: #ece6c8;
+  color: var(--primary);
 }
 
 .today-badge {
   display: inline-block;
-  background: var(--orange);
+  background: var(--accent);
   color: var(--white);
   font-size: 10px;
   font-weight: 700;
@@ -363,7 +388,7 @@ table tbody tr:hover {
 
 .btn-primary {
   display: inline-block;
-  background: var(--orange);
+  background: var(--accent);
   color: var(--white);
   border: none;
   border-radius: 50px;
@@ -374,18 +399,18 @@ table tbody tr:hover {
   transition:
     background 0.2s,
     transform 0.2s;
-  box-shadow: 0 6px 18px rgba(255, 104, 1, 0.28);
+  box-shadow: 0 6px 18px rgba(176, 28, 28, 0.28);
 }
 .btn-primary:hover {
-  background: #e55c00;
+  background: #8f1414;
   transform: translateY(-2px);
 }
 
 .btn-outline {
   display: inline-block;
   background: transparent;
-  color: var(--green);
-  border: 2px solid var(--green);
+  color: var(--primary);
+  border: 2px solid var(--primary);
   padding: 11px 24px;
   border-radius: 50px;
   font-weight: 600;
@@ -394,15 +419,15 @@ table tbody tr:hover {
   transition: 0.2s;
 }
 .btn-outline:hover {
-  background: var(--green);
-  color: var(--cream);
+  background: var(--primary);
+  color: var(--bg);
 }
 
 .btn-ghost {
   display: inline-block;
   background: transparent;
-  color: var(--cream);
-  border: 2px solid rgba(252, 250, 238, 0.4);
+  color: var(--bg);
+  border: 2px solid rgba(251, 248, 232, 0.4);
   padding: 11px 24px;
   border-radius: 50px;
   font-weight: 600;
@@ -411,15 +436,15 @@ table tbody tr:hover {
   transition: 0.2s;
 }
 .btn-ghost:hover {
-  border-color: var(--cream);
+  border-color: var(--bg);
 }
 
 .btn-edit {
   display: inline-block;
   padding: 6px 14px;
   background: transparent;
-  color: var(--green);
-  border: 1.5px solid var(--green);
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
   border-radius: 6px;
   font-size: 12px;
   font-weight: 600;
@@ -428,7 +453,7 @@ table tbody tr:hover {
   transition: 0.15s;
 }
 .btn-edit:hover {
-  background: var(--green);
+  background: var(--primary);
   color: var(--white);
 }
 
@@ -452,7 +477,7 @@ table tbody tr:hover {
 .link-btn {
   background: none;
   border: none;
-  color: var(--orange);
+  color: var(--accent);
   font-weight: 700;
   cursor: pointer;
   font-size: inherit;
@@ -468,8 +493,8 @@ table tbody tr:hover {
 .view-btn {
   display: inline-block;
   margin-top: 14px;
-  background: var(--green);
-  color: var(--cream);
+  background: var(--primary);
+  color: var(--bg);
   padding: 9px 20px;
   border-radius: 50px;
   font-size: 13px;
@@ -508,13 +533,13 @@ table tbody tr:hover {
   border: var(--border);
   border-radius: 8px;
   font-size: 14px;
-  background: var(--cream);
+  background: var(--bg);
   outline: none;
   transition: 0.15s;
 }
 .form-row input:focus {
-  border-color: var(--orange);
-  box-shadow: 0 0 0 3px rgba(255, 104, 1, 0.1);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(30, 74, 168, 0.14);
   background: var(--white);
 }
 
@@ -526,7 +551,7 @@ table tbody tr:hover {
   margin-bottom: 7px;
   font-weight: 700;
   font-size: 11px;
-  color: var(--green);
+  color: var(--primary);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -539,13 +564,13 @@ table tbody tr:hover {
   font-size: 14px;
   outline: none;
   transition: 0.2s;
-  background: var(--cream);
+  background: var(--bg);
   color: var(--ink);
 }
 .input-group input:focus,
 .input-group select:focus {
-  border-color: var(--orange);
-  box-shadow: 0 0 0 3px rgba(255, 104, 1, 0.12);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(30, 74, 168, 0.14);
   background: var(--white);
 }
 .hint {
@@ -599,7 +624,7 @@ table tbody tr:hover {
   margin-bottom: 7px;
   font-weight: 700;
   font-size: 11px;
-  color: var(--green);
+  color: var(--primary);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -611,13 +636,13 @@ table tbody tr:hover {
   font-size: 14px;
   outline: none;
   transition: 0.2s;
-  background: var(--cream);
+  background: var(--bg);
   color: var(--ink);
 }
 .field input:focus,
 .field select:focus {
-  border-color: var(--orange);
-  box-shadow: 0 0 0 3px rgba(255, 104, 1, 0.12);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(30, 74, 168, 0.14);
   background: var(--white);
 }
 
@@ -646,18 +671,18 @@ table tbody tr:hover {
   left: 0;
   right: 0;
   height: 4px;
-  background: var(--sand);
+  background: var(--line);
   transition: 0.3s;
 }
 .room-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 18px 40px rgba(12, 84, 70, 0.12);
+  box-shadow: 0 18px 40px rgba(30, 74, 168, 0.12);
 }
 .room-card:hover::before {
-  background: var(--orange);
+  background: var(--accent);
 }
 .room-card h2 {
-  color: var(--green);
+  color: var(--primary);
   margin-bottom: 14px;
   font-size: 17px;
   font-weight: 700;
@@ -671,7 +696,7 @@ table tbody tr:hover {
 .room-meta-time {
   margin-top: 8px;
   font-weight: 700;
-  color: var(--green);
+  color: var(--primary);
   font-size: 13px;
 }
 
@@ -689,7 +714,7 @@ table tbody tr:hover {
   padding: 60px;
 }
 .empty-state h2 {
-  color: var(--green);
+  color: var(--primary);
   margin-bottom: 10px;
   font-size: 20px;
 }
@@ -708,7 +733,7 @@ table tbody tr:hover {
 
 .landing {
   min-height: 100vh;
-  background: var(--cream);
+  background: var(--bg);
 }
 
 .pub-header {
@@ -718,21 +743,24 @@ table tbody tr:hover {
   justify-content: space-between;
   align-items: center;
   padding: 18px 60px;
-  box-shadow: 0 2px 20px rgba(12, 84, 70, 0.07);
+  box-shadow: 0 2px 20px rgba(30, 74, 168, 0.07);
   position: sticky;
   top: 0;
   z-index: 999;
 }
 
 .pub-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-size: 26px;
   font-weight: 800;
-  color: var(--green);
+  color: var(--primary);
   letter-spacing: -0.5px;
   cursor: pointer;
 }
-.pub-logo span {
-  color: var(--orange);
+.pub-logo .brand-logo {
+  height: 50px;
 }
 
 .pub-nav {
@@ -744,7 +772,7 @@ table tbody tr:hover {
 .pub-navlink {
   font-size: 15px;
   font-weight: 500;
-  color: var(--green);
+  color: var(--primary);
   background: none;
   border: none;
   cursor: pointer;
@@ -752,11 +780,11 @@ table tbody tr:hover {
 }
 .pub-navlink:hover,
 .pub-navlink--active {
-  color: var(--orange);
+  color: var(--accent);
 }
 
 .pub-cta {
-  background: var(--orange);
+  background: var(--accent);
   color: var(--white);
   border: none;
   padding: 10px 24px;
@@ -767,10 +795,10 @@ table tbody tr:hover {
   transition:
     background 0.2s,
     transform 0.2s;
-  box-shadow: 0 4px 14px rgba(255, 104, 1, 0.3);
+  box-shadow: 0 4px 14px rgba(176, 28, 28, 0.3);
 }
 .pub-cta:hover {
-  background: #e55c00;
+  background: #8f1414;
   transform: translateY(-1px);
 }
 
@@ -792,8 +820,8 @@ table tbody tr:hover {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: var(--green);
-  color: var(--cream);
+  background: var(--primary);
+  color: var(--bg);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 1.5px;
@@ -806,7 +834,7 @@ table tbody tr:hover {
 .hero-dot {
   width: 7px;
   height: 7px;
-  background: var(--orange);
+  background: var(--accent);
   border-radius: 50%;
   display: inline-block;
   animation: pulse 2s infinite;
@@ -833,7 +861,7 @@ table tbody tr:hover {
   letter-spacing: -1px;
 }
 .hero-text h1 em {
-  color: var(--orange);
+  color: var(--accent);
   font-style: normal;
 }
 .hero-text p {
@@ -863,7 +891,7 @@ table tbody tr:hover {
   font-size: 36px;
   margin-bottom: 44px;
   font-weight: 800;
-  color: var(--green);
+  color: var(--primary);
   letter-spacing: -0.5px;
 }
 
@@ -890,7 +918,7 @@ table tbody tr:hover {
   left: 0;
   right: 0;
   height: 4px;
-  background: var(--orange);
+  background: var(--accent);
   transform: scaleX(0);
   transform-origin: left;
   transition: 0.3s;
@@ -904,7 +932,7 @@ table tbody tr:hover {
 }
 .feature-card h3 {
   margin-bottom: 10px;
-  color: var(--green);
+  color: var(--primary);
   font-size: 16px;
   font-weight: 700;
 }
@@ -915,7 +943,7 @@ table tbody tr:hover {
 }
 
 .cta-banner {
-  background: var(--green);
+  background: var(--primary);
   padding: 72px 64px;
   display: grid;
   grid-template-columns: 1fr auto;
@@ -925,15 +953,15 @@ table tbody tr:hover {
 .cta-banner h2 {
   font-size: 36px;
   font-weight: 800;
-  color: var(--cream);
+  color: var(--bg);
   letter-spacing: -0.5px;
 }
 .cta-banner h2 em {
-  color: var(--orange);
+  color: var(--accent);
   font-style: normal;
 }
 .cta-banner p {
-  color: rgba(252, 250, 238, 0.7);
+  color: rgba(251, 248, 232, 0.7);
   margin-top: 12px;
   font-size: 15px;
   line-height: 1.8;
@@ -948,29 +976,35 @@ table tbody tr:hover {
 
 .pub-footer {
   margin-top: 0;
-  background: var(--green);
-  color: var(--cream);
+  background: var(--primary);
+  color: var(--bg);
   text-align: center;
   padding: 40px;
 }
 .pub-footer p {
-  color: rgba(252, 250, 238, 0.65);
+  color: rgba(251, 248, 232, 0.65);
   line-height: 1.9;
   font-size: 13.5px;
   margin-top: 8px;
 }
 .footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 20px;
   font-weight: 800;
-  color: var(--cream);
+  color: var(--bg);
 }
-.footer-logo span {
-  color: var(--orange);
+.footer-logo .brand-logo {
+  height: 40px;
+}
+.footer-logo .brand-name b {
+  color: var(--gold);
 }
 
 .auth-page {
   min-height: 100vh;
-  background: var(--cream);
+  background: var(--bg);
 }
 .auth-center {
   min-height: calc(100vh - 80px);
@@ -995,7 +1029,7 @@ table tbody tr:hover {
 .auth-card h1 {
   font-size: 28px;
   font-weight: 800;
-  color: var(--green);
+  color: var(--primary);
   margin-bottom: 6px;
 }
 .auth-card > p {
@@ -1022,7 +1056,7 @@ table tbody tr:hover {
 .page-title h1 {
   font-size: 40px;
   font-weight: 800;
-  color: var(--green);
+  color: var(--primary);
   letter-spacing: -0.5px;
 }
 .page-title p {
@@ -1042,7 +1076,7 @@ table tbody tr:hover {
 .form-card h2 {
   font-size: 20px;
   font-weight: 700;
-  color: var(--green);
+  color: var(--primary);
   margin-bottom: 8px;
 }
 
@@ -1067,7 +1101,7 @@ table tbody tr:hover {
   font-size: 14px;
 }
 .check-mark {
-  color: var(--orange);
+  color: var(--accent);
   font-weight: 700;
 }
 
@@ -1078,8 +1112,8 @@ table tbody tr:hover {
   margin-bottom: 24px;
 }
 .stack-tag {
-  background: var(--sand);
-  color: var(--green);
+  background: var(--line);
+  color: var(--primary);
   padding: 6px 16px;
   border-radius: 50px;
   font-size: 13px;
@@ -1087,7 +1121,7 @@ table tbody tr:hover {
 }
 
 .profile-banner {
-  background: var(--green);
+  background: var(--primary);
   border-radius: var(--radius);
   padding: 36px 32px 90px;
   position: relative;
@@ -1101,7 +1135,7 @@ table tbody tr:hover {
   top: -40px;
   width: 200px;
   height: 200px;
-  background: rgba(255, 104, 1, 0.12);
+  background: rgba(230, 198, 92, 0.14);
   border-radius: 50%;
 }
 .banner-eyebrow {
@@ -1109,19 +1143,19 @@ table tbody tr:hover {
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(252, 250, 238, 0.45);
+  color: rgba(251, 248, 232, 0.45);
   margin-bottom: 8px;
 }
 .banner-name {
   font-size: 26px;
   font-weight: 800;
-  color: var(--cream);
+  color: var(--bg);
   letter-spacing: -0.3px;
 }
 .banner-meta {
   margin-top: 8px;
   font-size: 13px;
-  color: rgba(252, 250, 238, 0.6);
+  color: rgba(251, 248, 232, 0.6);
   font-weight: 500;
 }
 .profile-avatar-wrap {
@@ -1133,7 +1167,7 @@ table tbody tr:hover {
   width: 80px;
   height: 80px;
   border-radius: 12px;
-  background: var(--orange);
+  background: var(--accent);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1141,7 +1175,7 @@ table tbody tr:hover {
   font-weight: 800;
   color: #fff;
   border: 4px solid var(--white);
-  box-shadow: 0 6px 20px rgba(12, 84, 70, 0.16);
+  box-shadow: 0 6px 20px rgba(30, 74, 168, 0.16);
 }
 
 .profile-body {
@@ -1171,7 +1205,7 @@ table tbody tr:hover {
   justify-content: space-between;
   align-items: center;
   padding: 14px 22px;
-  border-bottom: 1px solid #f0ede4;
+  border-bottom: 1px solid #efe9cc;
 }
 .info-row:last-child {
   border-bottom: none;
@@ -1190,19 +1224,19 @@ table tbody tr:hover {
 }
 
 .stat-tile {
-  background: var(--green);
+  background: var(--primary);
   border-radius: var(--radius);
   padding: 26px;
 }
 .stat-tile-num {
   font-size: 44px;
   font-weight: 800;
-  color: var(--orange);
+  color: var(--accent);
   line-height: 1;
 }
 .stat-tile-label {
   font-size: 12px;
-  color: rgba(252, 250, 238, 0.65);
+  color: rgba(251, 248, 232, 0.65);
   margin-top: 5px;
 }
 .stat-tile-link {
@@ -1210,7 +1244,7 @@ table tbody tr:hover {
   margin-top: 18px;
   font-size: 13px;
   font-weight: 600;
-  color: var(--orange);
+  color: var(--accent);
 }
 
 .quick-panel {
@@ -1235,7 +1269,7 @@ table tbody tr:hover {
   align-items: center;
   justify-content: space-between;
   padding: 13px 22px;
-  border-bottom: 1px solid #f0ede4;
+  border-bottom: 1px solid #efe9cc;
   font-size: 14px;
   font-weight: 500;
   color: var(--ink);
@@ -1252,8 +1286,8 @@ table tbody tr:hover {
   border-bottom: none;
 }
 .quick-link:hover {
-  background: #faf8f0;
-  color: var(--orange);
+  background: #fbf8e8;
+  color: var(--accent);
 }
 
 @media (max-width: 1200px) {
@@ -1270,7 +1304,16 @@ table tbody tr:hover {
     width: 60px;
     padding: 20px 8px;
   }
-  .sidebar-logo,
+  .sidebar-logo {
+    padding: 0;
+    justify-content: center;
+  }
+  .sidebar-logo .brand-name {
+    display: none;
+  }
+  .sidebar-logo .brand-logo {
+    height: 34px;
+  }
   .sidebar-section-label,
   .sidebar-divider {
     display: none;
@@ -1367,14 +1410,14 @@ table tbody tr:hover {
   width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--cream);
+  background: var(--bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--sand);
+  background: var(--line);
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--green);
+  background: var(--primary);
 }
 
 .spinner-wrap {
@@ -1405,12 +1448,12 @@ table tbody tr:hover {
 }
 .stat-box:hover {
   transform: translateY(-3px);
-  border-color: var(--orange);
+  border-color: var(--accent);
 }
 .stat-box-num {
   font-size: 40px;
   font-weight: 800;
-  color: var(--green);
+  color: var(--primary);
   line-height: 1;
 }
 .stat-box-label {
@@ -1423,13 +1466,13 @@ table tbody tr:hover {
 }
 
 :root {
-  --blue: #0e7490;
-  --blue-light: #ecfeff;
+  --student: #2e7d4f;
+  --student-light: #e8f5ec;
 }
 
 .badge-blue {
-  background: #cffafe;
-  color: #0e7490;
+  background: #d6efdf;
+  color: #2e7d4f;
 }
 
 .sidebar-role-badge {
@@ -1440,29 +1483,29 @@ table tbody tr:hover {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.5px;
-  background: rgba(14, 116, 144, 0.2);
-  color: #67e8f9;
+  background: rgba(80, 179, 123, 0.25);
+  color: #9be3b8;
   text-transform: uppercase;
 }
 .sidebar-role-badge--teacher {
-  background: rgba(255, 104, 1, 0.2);
-  color: #fdba74;
+  background: rgba(230, 198, 92, 0.22);
+  color: #f3dc8b;
 }
 
 .student-notice {
-  background: var(--blue-light);
-  border: 1.5px solid #bfdbfe;
+  background: var(--student-light);
+  border: 1.5px solid #b7dfc5;
   border-radius: 10px;
   padding: 14px 18px;
   margin-bottom: 20px;
   font-size: 13.5px;
-  color: #1e40af;
+  color: #1e5a38;
   line-height: 1.6;
 }
 
 .btn-primary-student {
   display: inline-block;
-  background: var(--blue);
+  background: var(--student);
   color: #fff;
   border: none;
   border-radius: 50px;
@@ -1471,18 +1514,18 @@ table tbody tr:hover {
   font-weight: 700;
   cursor: pointer;
   transition: 0.2s;
-  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.28);
+  box-shadow: 0 6px 18px rgba(46, 125, 79, 0.28);
 }
 .btn-primary-student:hover {
-  background: #2563eb;
+  background: #236640;
   transform: translateY(-2px);
 }
 
 .view-btn--student {
-  background: var(--blue);
+  background: var(--student);
 }
 .view-btn--student:hover {
-  background: #2563eb;
+  background: #236640;
 }
 
 .auth-role-tag {
@@ -1494,12 +1537,12 @@ table tbody tr:hover {
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 16px;
-  background: #fff0e5;
-  color: var(--orange);
+  background: #e4ecfb;
+  color: var(--primary);
 }
 .auth-role-tag--student {
-  background: var(--blue-light);
-  color: #1d4ed8;
+  background: var(--student-light);
+  color: #236640;
 }
 
 .pub-register-group {
@@ -1508,29 +1551,29 @@ table tbody tr:hover {
   align-items: center;
 }
 .pub-cta--student {
-  background: var(--blue);
-  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+  background: var(--student);
+  box-shadow: 0 4px 14px rgba(46, 125, 79, 0.3);
 }
 .pub-cta--student:hover {
-  background: #2563eb;
+  background: #236640;
 }
 .btn-outline--student {
-  border-color: var(--blue);
-  color: var(--blue);
+  border-color: var(--student);
+  color: var(--student);
 }
 .btn-outline--student:hover {
-  background: var(--blue);
+  background: var(--student);
   color: #fff;
 }
 
 .profile-banner--student {
-  background: #1d4ed8;
+  background: #236640;
 }
 .profile-avatar-big--student {
-  background: var(--blue);
+  background: var(--student);
 }
 .avatar--student {
-  background: var(--blue);
+  background: var(--student);
 }
 
 .filter-bar {
@@ -1582,13 +1625,13 @@ table tbody tr:hover {
   transition: 0.15s;
 }
 .filter-tab--active {
-  background: var(--green);
+  background: var(--primary);
   color: var(--white);
-  border-color: var(--green);
+  border-color: var(--primary);
 }
 .filter-tab:hover:not(.filter-tab--active) {
-  border-color: var(--green);
-  color: var(--green);
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 .role-cards {
@@ -1598,7 +1641,7 @@ table tbody tr:hover {
   margin: 16px 0 28px;
 }
 .role-card {
-  background: var(--cream);
+  background: var(--bg);
   border-radius: 10px;
   padding: 20px;
   border: var(--border);

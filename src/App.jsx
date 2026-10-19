@@ -370,7 +370,14 @@ function AppShell(props) {
     <div className="shell">
       <aside className="sidebar">
         <div className="sidebar-logo">
-          Room<span>Ease</span>
+          <img
+          className="brand-logo"
+          src="/rosemont-logo.png"
+          alt="Rosemont Hills Montessori College"
+        />
+        <span className="brand-name">
+          Room<b>Ease</b>
+        </span>
         </div>
         {isStudent && <div className="sidebar-role-badge">Student</div>}
         {isTeacher && (
@@ -436,7 +443,14 @@ function PublicHeader({ nav, active }) {
   return (
     <header className="pub-header">
       <div className="pub-logo" onClick={() => nav("home")}>
-        Room<span>Ease</span>
+        <img
+          className="brand-logo"
+          src="/rosemont-logo.png"
+          alt="Rosemont Hills Montessori College"
+        />
+        <span className="brand-name">
+          Room<b>Ease</b>
+        </span>
       </div>
       <nav className="pub-nav">
         <button
@@ -559,7 +573,14 @@ function LandingPage({ nav }) {
       </section>
       <footer className="pub-footer">
         <div className="footer-logo">
-          Room<span>Ease</span>
+          <img
+          className="brand-logo"
+          src="/rosemont-logo.png"
+          alt="Rosemont Hills Montessori College"
+        />
+        <span className="brand-name">
+          Room<b>Ease</b>
+        </span>
         </div>
         <p>
           Classroom Availability & Scheduling System · ©{" "}
@@ -945,17 +966,17 @@ function AboutPage({ nav }) {
             {[
               {
                 role: "Admin",
-                color: "var(--orange)",
+                color: "var(--accent)",
                 desc: "Full system access. Manages classrooms, schedules, teacher accounts, and generates reports.",
               },
               {
                 role: "Teacher",
-                color: "var(--green)",
+                color: "var(--primary)",
                 desc: "Creates and manages their own class schedules. Can check room availability.",
               },
               {
                 role: "Student",
-                color: "#3b82f6",
+                color: "#2e7d4f",
                 desc: "View-only access. Can check which rooms are available and view all classroom schedules.",
               },
             ].map((r) => (
@@ -981,7 +1002,14 @@ function AboutPage({ nav }) {
       </section>
       <footer className="pub-footer">
         <div className="footer-logo">
-          Room<span>Ease</span>
+          <img
+          className="brand-logo"
+          src="/rosemont-logo.png"
+          alt="Rosemont Hills Montessori College"
+        />
+        <span className="brand-name">
+          Room<b>Ease</b>
+        </span>
         </div>
         <p>© {new Date().getFullYear()} RoomEase. All Rights Reserved.</p>
       </footer>
@@ -1545,7 +1573,7 @@ function ManageClassrooms({ user, classrooms, setClassrooms, loading }) {
                         onChange={(e) => setEditName(e.target.value)}
                         style={{
                           padding: "4px 8px",
-                          border: "1.5px solid var(--sand)",
+                          border: "1.5px solid var(--line)",
                           borderRadius: 6,
                         }}
                       />
@@ -2330,7 +2358,7 @@ function ClassroomIllustration() {
         width="440"
         height="280"
         rx="16"
-        fill="#0C5446"
+        fill="#1E4AA8"
         opacity=".08"
       />
       <rect
@@ -2340,15 +2368,15 @@ function ClassroomIllustration() {
         height="240"
         rx="12"
         fill="white"
-        stroke="#DBD0BE"
+        stroke="#E0D6A8"
         strokeWidth="2"
       />
-      <rect x="60" y="80" width="360" height="60" rx="8" fill="#0C5446" />
+      <rect x="60" y="80" width="360" height="60" rx="8" fill="#1E4AA8" />
       <text
         x="240"
         y="117"
         textAnchor="middle"
-        fill="#FCFAEE"
+        fill="#FBF8E8"
         fontFamily="Poppins,sans-serif"
         fontWeight="700"
         fontSize="18"
@@ -2364,14 +2392,14 @@ function ClassroomIllustration() {
             width="82"
             height="34"
             rx="6"
-            fill={row === 0 && col === 1 ? "#FF6801" : "#FCFAEE"}
-            stroke="#DBD0BE"
+            fill={row === 0 && col === 1 ? "#B01C1C" : "#FBF8E8"}
+            stroke="#E0D6A8"
             strokeWidth="1.5"
           />
         )),
       )}
-      <rect x="180" y="290" width="120" height="6" rx="3" fill="#DBD0BE" />
-      <rect x="220" y="296" width="40" height="14" rx="3" fill="#DBD0BE" />
+      <rect x="180" y="290" width="120" height="6" rx="3" fill="#E0D6A8" />
+      <rect x="220" y="296" width="40" height="14" rx="3" fill="#E0D6A8" />
     </svg>
   );
 }
